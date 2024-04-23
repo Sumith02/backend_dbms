@@ -2,7 +2,7 @@ const db = require('../db/db');
 module.exports = (req, res, next) => {
     const { admin_name, password } = req.body;
 
-    const query = 'SELECT * FROM admins WHERE admin_name = ?';
+    const query = 'SELECT * FROM admins WHERE user_name = ?';
     db.query(query, [admin_name], (err, results) => {
         if (err) {
             console.error('Error executing query:', err);

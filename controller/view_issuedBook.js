@@ -9,5 +9,6 @@ module.exports = (req, res, next) => {
         }
 
         res.json(results);
+        //console.log(results);
     });
 };

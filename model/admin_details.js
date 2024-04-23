@@ -2,8 +2,9 @@ const db = require("../db/db");
 module.exports = (req, res, next) => {
     const adminSchemaQuery = `
         CREATE TABLE admins(
-            adminid INT AUTO_INCREMENT PRIMARY KEY,
+            adminid INT  PRIMARY KEY,
             admin_name VARCHAR(20),
+            user_name VARCHAR(20),
             password VARCHAR(20)
         );
     `;

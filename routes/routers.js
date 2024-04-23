@@ -33,8 +33,8 @@ const viewAuthor = require('../controller/view_author');
 const categoryDetails = require('../controller/category_add_query');
 const viewCategory = require('../controller/view_category');
 
-
-
+const countUsers = require('../controller/registered_users_count');
+const deleteIsuee = require('../controller/delete_issued');
 
 //const changePass = require('../controller/change_pass');
 
@@ -54,7 +54,7 @@ router.get("/viewissueuser", ViewIssueUser);
 router.get("/currentdate", currentTime);
 router.post("/currentdate", currentTime);
 
-
+router.post("/deleteissue", deleteIsuee);
 
 router.get("/viewissue", viewIssuedBook);
 router.get("/viewreguser", viewUsersDetails);
@@ -73,9 +73,11 @@ router.post("/userlogin", userLogin);
 
 
 router.post("/addbook", bookAddRouter);
-
 router.post("/addauthor", authorDetails);
-
 router.post("/addcategory", categoryDetails);
 
+
+
+
+router.get("/countuser", countUsers);
 module.exports = router;

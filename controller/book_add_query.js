@@ -2,7 +2,7 @@ const db = require('../db/db');
 module.exports = (req, res, next) => {
     const { id, name, author, category, price } = req.body;
     const bookQuery = `
-        INSERT INTO books(book_id,book_name,author_id,cat_id,book_price) VALUES(?,?,?,?,?)
+        INSERT INTO books(book_id,book_name,book_author,book_cat,book_price) VALUES(?,?,?,?,?)
     `;
     db.query(bookQuery, [id, name, author, category, price], (error, result) => {
         if (error) {

@@ -27,6 +27,10 @@ async function updateData() {
             } else {
                 resolve(results);
             }
+
         });
+
+
+
     });
 }

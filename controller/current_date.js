@@ -6,8 +6,9 @@ module.exports = async(req, res, next) => {
         const getCurrentDate = async() => {
             const currentDate = new Date();
             const formattedDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
-            // return formattedDate;
+
             res.json({ formattedDate });
+            return formattedDate;
         };
 
         // Define a function to update data in the database
@@ -23,6 +24,7 @@ module.exports = async(req, res, next) => {
 
         // Send the current date as a JSON response
         //res.json({ currentDate });
+
     } catch (error) {
         console.error('Error handling request:', error);
         res.status(500).json({ error: 'Internal Server Error' });
